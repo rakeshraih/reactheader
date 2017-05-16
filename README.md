@@ -1,9 +1,9 @@
 # reactheader
 
-- Install the dependency
+Install the dependency
 - npm install
 
--Run the app,
+Run the app,
 - gulp 
 
 Access the app by, 
