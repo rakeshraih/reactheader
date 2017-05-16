@@ -151,7 +151,7 @@ input{
   margin-top: -12px;
   opacity : 0;
 
-      @media screen and (max-width: $mediumScreen ) {
+      @media screen and (max-width: $bigScreen ) {
          border-left: 10px solid transparent;
 		 border-right: 10px solid transparent;
 		 border-bottom: 8px solid #F09819;

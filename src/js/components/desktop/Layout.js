@@ -62,12 +62,13 @@ export default class Layout extends React.Component {
 
 		const lioffset=element.offsetLeft;
 		const arrowoffset=arrow.offsetLeft;
-		arrow.style.marginLeft = Math.floor(element.getBoundingClientRect().left)+(element.parentElement.offsetWidth/2)-10+"px";
+		//arrow.style.marginLeft = Math.floor(element.getBoundingClientRect().left)+(element.parentElement.offsetWidth/2)-10+"px";
         
         classNamesArrow="arrow-up "+classNamesArrow;
   		this.setState({
     		classnames: classnames,
-    		classNamesArrow: classNamesArrow
+    		classNamesArrow: classNamesArrow,
+    		 element: element
   		});
     }
 
@@ -78,15 +79,37 @@ export default class Layout extends React.Component {
         //arrow.style.visibility = 'hidden';
         this.setState({
     		classnames: " subcomponent ",
-    		 classNamesArrow:" arrow-up "
+    		 classNamesArrow:" arrow-up ",
 
   		});
 
 	}
 
+	updateDimensions(e) {
+          
+        this.setState({
+    		device: window.innerWidth  < 700 ? "small" : "large"
+  		});
+
+  		const arrow=document.getElementById("arrow-up");
+        const subcomponent = document.getElementById('subcomponentId');
+
+
+       if(this.state.device==="small"){
+         arrow.style.visibility = 'hidden';
+         subcomponent.style.visibility = 'hidden';
+
+       }else{
+       	 arrow.style.visibility = 'visible';
+       	 subcomponent.style.visibility = 'visible';
+
+       }
+
+	}
+
    componentDidMount() {
        document.addEventListener('click', this.handleClickOutside.bind(this), true);
-       window.addEventListener("resize", this.updateDimensions, true);
+       window.addEventListener("resize", this.updateDimensions.bind(this), true);
 
          const arrow=document.getElementById("arrow-up");
           const subcomponent = document.getElementById('subcomponentId');
@@ -100,14 +123,38 @@ export default class Layout extends React.Component {
        	 subcomponent.style.visibility = 'visible';
 
        }
+ 
+
    }
 
 	render() {
+
+		let element=this.state.element;
+
+        if(element != null){
+        	const arrow=document.getElementById("arrow-up");
+        	const arrowoffset=arrow.offsetLeft;
+
+            if(arrowoffset == 0){
+				const lioffset=element.offsetLeft;
+				arrow.style.marginLeft = Math.floor(element.getBoundingClientRect().left)+(element.parentElement.offsetWidth/2)-10+"px";
+           }else{
+
+           	     let marginleftvar=Math.floor(element.getBoundingClientRect().left)+(element.parentElement.offsetWidth/2)-10+"px";
+                 var arrowStyle = {
+				  marginLeft: marginleftvar+"",
+				  transition: "transform 1s ease-in",
+				  WebkitTransition : "all 1s ease"
+				};
+
+           }  
+        }
+
 		return (
 			<div class="lights-container">
 				<Header link={this.subLinkChnaged.bind(this)}/>
 				<div class="header-highlight">
-                <div id="arrow-up" className={this.state.classNamesArrow}></div>
+                <div id="arrow-up" style={arrowStyle} className={this.state.classNamesArrow}></div>
 				</div>
                 <SubLinks classnames={this.state.classnames}/>
 			</div>
