@@ -1,0 +1,394 @@
+$smallScreen:768px;
+$mediumScreen:992px;
+$bigScreen:1200px;
+
+html{
+}
+body {
+	background: white;
+	margin:0px;
+	margin-top:0px;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,Arial,sans-serif;
+	-webkit-font-smoothing: antialiased;
+
+}
+
+.header{
+	background: linear-gradient(to right, #AA076B, #61045F);
+	height: 87px;
+	padding: 0px 140px 0px 140px;
+
+	@media screen and (max-width: $bigScreen) {
+       padding: 0px;
+       height: 50px;
+    }
+}
+.header-highlight{
+	background: linear-gradient(to right, #F09819, #EDDE5D);
+	height: 5px;
+}
+
+.listHolder{
+}
+
+ol{
+
+	padding: 10px;
+    float: right;
+	font-size:20px;	
+
+
+    li{
+	display:inline;
+	color: #F09819;
+	padding:0px;
+
+      .mobileIcon{
+           display:none; 
+           padding-right: 15px;
+       }
+
+    }
+
+
+
+    @media screen and (max-width: $bigScreen) {
+       font-size:15px;
+       padding: 0px;
+
+
+    }
+
+    @media screen and (max-width: $smallScreen) {
+
+        li:not(.searchli){
+             display:none;
+        }
+
+        li .mobileIcon{
+           display:inline-block; 
+         }
+
+        li.searchli .spanLine{
+           padding: 5px;
+         }
+          
+    }
+
+    @media screen and (max-width: $mediumScreen) {
+         font-size:15px;
+         padding: 0px;
+
+    }
+
+}
+
+a{	
+	color: #F09819;
+    text-decoration: none;
+    padding: 15px;
+
+    @media screen and (max-width: $bigScreen) {	
+         padding: 20px;    
+    }
+
+    @media screen and (max-width: $mediumScreen) {	
+         padding: 10px;    
+    }
+
+}
+
+a:hover{	    
+	color: #FFF;
+    text-decoration: none;
+
+
+}
+
+.spanLine{
+	color: #F09819;
+	border-left:1px solid #F09819;
+	padding:10px;
+
+    @media screen and (max-width: $smallScreen) {	
+         padding: 0px;    
+    }
+
+    @media screen and (max-width: $mediumScreen) {	
+         padding: 5px;    
+    }
+
+}
+
+.subcomponent{
+	height:100px;
+	padding: 0px 100px 0px 100px;
+	 margin-top:-100px;
+  box-sizing: border-box;
+  transition: height 500ms 0ms, opacity 500ms 500ms;
+  transition: all ease-in;
+   position: absolute;
+   width: 100%;
+   z-index: -1;
+}
+
+input{
+	width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top:25px;
+    font-size:30px;
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 12px solid #F09819;
+  position: absolute;
+  margin-top: -12px;
+  opacity : 0;
+
+      @media screen and (max-width: $mediumScreen ) {
+         border-left: 10px solid transparent;
+		 border-right: 10px solid transparent;
+		 border-bottom: 8px solid #F09819;
+		 margin-top: -8px;
+    }
+
+}
+
+  .arrow-up-show {
+    opacity: 1;
+    -webkit-transition: opacity 4s; /* For Safari 3.1 to 6.0 */
+    transition: opacity 4s;
+    transition: opacity 1s ease-in-out;
+   -moz-transition: opacity 1s ease-in-out;
+   -webkit-transition: opacity 1s ease-in-out;
+    }
+
+   .arrow-up-hide {
+    opacity: 0;
+    -webkit-transition: opacity 4s; /* For Safari 3.1 to 6.0 */
+    transition: opacity 4s;
+    transition: opacity 1s ease-in-out;
+   -moz-transition: opacity 1s ease-in-out;
+   -webkit-transition: opacity 1s ease-in-out;
+    }
+
+.titleHolder{
+	font-size:50px;
+	max-width:30px;
+	float:left;
+	padding: 20px 20px 20px 20px;
+	font-weight: 200;
+
+.outside1{
+     background: linear-gradient(45deg, #1a1e5a 0, #122d98 100%);
+}
+
+   a{
+      color: #F09819;
+      padding:5px 5px 5px 5px !important;
+    }
+
+.outside2{
+     padding: 10px; 
+     color: white;
+
+
+
+     @media screen and (max-width: $bigScreen) {
+       padding: 5px; 
+    }
+}
+
+	@media screen and (max-width: $bigScreen) {
+       padding: 12px; 
+       font-size:25px;
+    }
+}
+
+
+    .slideInLoad {
+        font-size: 40px;
+        animation: slideInLoad 0.70s ease-in-out;
+        animation-fill-mode: forwards;  
+        box-shadow: 5px 5px 5px #888888;
+    }
+    @keyframes slideInLoad {
+
+
+        from {
+            margin-top:-150px;
+        }
+        to {
+             margin-top:0px;
+        }
+    }
+
+    .slideOutLoad {
+        font-size: 40px;
+        animation: slideOutLoad 0.70s ease-in-out;
+        animation-fill-mode: forwards;  
+        box-shadow: 5px 5px 5px #888888;
+    }
+    @keyframes slideOutLoad {
+
+
+        from {
+            margin-top:0px;
+        }
+        to {
+             margin-top:-150px;
+        }
+    }
+
+.mobileIcon{
+	
+	width:20px;
+	.iconLine{
+        border-bottom:1px solid #F09819;
+        margin-top:4px;
+	}
+	cursor:pointer;
+} 
+
+.closeIcon {
+	    font-size: 20px;
+        font-weight: lighter;
+        display: inline-block;
+        cursor:pointer;
+        margin-right: -10px;
+}  
+
+.dropdownMobileHolder{
+	
+
+    background: #FFF;
+    width: 100%;
+    position:absolute;
+    top: 55px;
+    box-shadow: 5px 5px 5px #888888;
+    z-index: -1;
+
+	.dropdownMobile{
+         background: #FFF;
+         border-bottom:1px solid #CCC;
+         font-size:18px;
+         padding:25px;
+
+         a{
+           color:#122d98;
+           :hover{
+            
+           }
+         }
+
+         span{
+           font-size:25px;
+           color:#122d98;
+         }
+	}
+
+	ol{
+       
+       font-size: 12px !important;
+
+
+       li{
+
+       }
+
+	}
+
+}
+
+.slideInLoadMobile {
+        font-size: 40px;
+        animation: slideInLoadMobile 0.30s ease-in-out;
+        animation-fill-mode: forwards;  
+        box-shadow: 5px 5px 5px #888888;
+}
+@keyframes slideInLoadMobile {
+
+    
+        from {
+            margin-top:-400px;
+        }
+        to {
+             margin-top:0px;
+        }
+ }
+
+.slideOutLoadMobile {
+        font-size: 40px;
+        animation: slideOutLoadMobile 0.30s ease-in-out;
+        animation-fill-mode: forwards;  
+        box-shadow: 5px 5px 5px #888888;
+}
+@keyframes slideOutLoadMobile {
+
+    
+        from {
+            margin-top:0px;
+        }
+        to {
+             margin-top:-395px;
+        }
+ }
+
+.searchCircle{
+	height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: 2px solid grey;
+    display: inline-block;
+
+    :hover{
+       border: 2px solid green;
+     } 
+    @media screen and (max-width: $bigScreen) {
+         
+
+    }
+
+    @media screen and (max-width: $smallScreen) {
+         height: 14px;
+         width: 14px;
+          
+    }
+
+    @media screen and (max-width: $mediumScreen) {
+          height: 14px;
+          width: 14px;
+
+    }
+
+    .searchLine{
+    border: 1px solid grey;
+    margin-left: 13px;
+    width: 16px;
+    margin-top: 20px;
+    -webkit-transform: rotate(40deg);
+    transform: rotate(45deg);
+
+    @media screen and (max-width: $smallScreen) {
+    width: 9px;
+    margin-left: 13px;
+    margin-top: 16px;
+          
+    }
+
+    @media screen and (max-width: $mediumScreen) {
+    width: 9px;
+    margin-left: 13px;
+    margin-top: 16px;
+
+    }
+    }
+}
+
+
