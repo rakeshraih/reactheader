@@ -65,13 +65,10 @@ gulp.task('root', function() {
     .pipe(gulp.dest('./build'));
 });
 
-gulp.task('webserver-stop', function (cb) {
-  http.request('http://localhost:8000/_kill_').on('close', cb).end();
-});
-
 function swallowError (error) {
   console.log(error.toString())
   this.emit('end')
 }
 
-gulp.task('default', ['sass', 'js','watch','root','webserver']);
+//gulp.task('default', ['sass', 'js','watch','root','webserver']);
+gulp.task('default', ['sass', 'js','root']);
