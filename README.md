@@ -1,13 +1,13 @@
 # reactheader
 
-Install the dependency
+Install the dependencies,
 - npm install
 
-build teh project,
+build the project,
 - gulp 
 
 start the server,
 - gulp webserver
 
-Access the app by, 
+Access the app at, 
 - http://localhost:8000/index.html
