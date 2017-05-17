@@ -34,7 +34,7 @@ export default class Layout extends React.Component {
 
 			}
 		return (
-			<div class="wrapper">
+			<div class="headreLayOutHolder">
 				{currentLayout}
 			</div>
 		);

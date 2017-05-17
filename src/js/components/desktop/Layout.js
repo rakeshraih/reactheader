@@ -28,6 +28,7 @@ export default class Layout extends React.Component {
 
 		   subcomponent.setAttribute('aria-hidden', 'true');
 		    element.setAttribute('aria-expanded', 'false');
+		    element.setAttribute('aria-control', ''); 
             classnames=" subcomponent slideOutLoad ";
              //arrow.style.visibility = 'hidden';
              classNamesArrow=" arrow-up-hide ";
@@ -39,6 +40,7 @@ export default class Layout extends React.Component {
 			    if("true" == element.getAttribute("aria-expanded")){
                     subcomponent.setAttribute('aria-hidden', 'true');
 		            element.setAttribute('aria-expanded', 'false');
+		            element.setAttribute('aria-control', ''); 
                     classnames=" subcomponent slideOutLoad ";
                     classNamesArrow=" arrow-up-hide ";
 
@@ -49,7 +51,7 @@ export default class Layout extends React.Component {
 			    }
 
 			});
-
+            element.setAttribute('aria-control', 'subcomponentId'); 
             subcomponent.setAttribute('aria-hidden', 'false');
 		    element.setAttribute('aria-expanded', 'true');
             classnames="slideInLoad subcomponent "+element.id;
@@ -151,10 +153,10 @@ export default class Layout extends React.Component {
         }
 
 		return (
-			<div class="lights-container">
+			<div>
 				<Header link={this.subLinkChnaged.bind(this)}/>
 				<div class="header-highlight">
-                <div id="arrow-up" style={arrowStyle} className={this.state.classNamesArrow}></div>
+                <div id="arrow-up" style={arrowStyle} title="Navigation highlighter arrow" aria-label="Navigation highlighter arrow" className={this.state.classNamesArrow}></div>
 				</div>
                 <SubLinks classnames={this.state.classnames}/>
 			</div>

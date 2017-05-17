@@ -8,11 +8,11 @@ export default class Header extends React.Component {
 		return (
 			<div class="header">
 			<div class="titleHolder">
-				<span class="outside1" >
-					<span class="outside2">
+				<span title="Credit card icon" aria-label="Credit card icon" class="creditCardIconOutside" >
+					<span class="creditCardIconInside">
 					</span>
 				</span>
-				<a href="/index.html">VISA</a>
+				<a aria-label="Reload Visa Home page" href="/index.html">VISA</a>
 			</div>
 				<div class="listHolder">
                 <HeaderLinks link={this.props.link}/>

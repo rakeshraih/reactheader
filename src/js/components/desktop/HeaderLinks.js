@@ -5,9 +5,12 @@ import DropDown from "mobile/DropDown";
 
 class ListLink extends React.Component {
     
+
     render() {
+    	let ariaLable="More options on "+this.props.linkName;
+
 		return (
-              <li ><a class="headerLinks" onClick={this.props.link} id={this.props.linkName.replace(/ /gi,"")} href="#">{this.props.linkName}</a></li>
+              <li role="menuitem"><a class="headerLinks" aria-label={ariaLable} aria-haspopup="true" onClick={this.props.link} id={this.props.linkName.replace(/ /gi,"")} href="#">{this.props.linkName}</a></li>
 		);
 	}
 
@@ -74,17 +77,17 @@ export default class HeaderLinks extends React.Component {
 
 		return (
 			<section>
-			<ol>
+			<ol role="menu">
 				<ListLink link={this.props.link} linkName="Pay With Visa"/>
 				<ListLink link={this.props.link} linkName="Partner with us"/>
 				<ListLink link={this.props.link} linkName="Run your business"/>
-				<li ><a  id="Travelwithus" href="/index.html">Travel with us</a></li>
+				<li role="menuitem"><a  aria-label="More options on Visa Travel with us" id="Travelwithus" href="/index.html">Travel with us</a></li>
 				<ListLink link={this.props.link} linkName="Visa Everywhere"/>
-				<li class="searchli">
-				<div onClick={this.mobileIconClicked.bind(this)} class="mobileIcon">
+				<li role="menuitem" class="searchli">
+				<div title="Menu Icon" aria-label="Menu Icon" onClick={this.mobileIconClicked.bind(this)} class="mobileIcon">
                        {icon} 
 				</div>
-				<span class="spanLine"><a onClick={this.props.link} class="headerLinks"  href="#"><div class="searchCircle"><div class="searchLine"></div></div></a></span>
+				<span class="spanLine"><a onClick={this.props.link} class="headerLinks"  aria-label="Search on this site" aria-haspopup="true" href="#"><div class="searchCircle" title="Search Icon" aria-label="Search Icon"><div class="searchLine"></div></div></a></span>
 				</li>
 			</ol>
 			{mobileDropdown}

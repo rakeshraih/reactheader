@@ -8,9 +8,9 @@ export default class Main extends React.Component {
 
 	render() {
 		return (
-			<main class="main" role="main">
+			<nav class="main" role="navigation" aria-label="Navigation links">
 			<Layout/>
-			</main>
+			</nav>
 		);
 	}
 }
